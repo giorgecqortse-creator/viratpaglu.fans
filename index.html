@@ -171,14 +171,21 @@
     <script src="script.js"></script>
 
 <script>
-window.addEventListener('load', function() {
+function startCelebration() {
+    // Show audio
     let audio = document.getElementById("music");
+    audio.style.display = "block"; // agar visible control chahiye
     audio.play().catch(() => {
-        document.addEventListener("click", () => {
-            audio.play();
-        }, { once: true });
+        // fallback for mobile autoplay block
+        document.addEventListener("click", () => audio.play(), { once: true });
     });
-});
+
+    // Show gallery
+    document.getElementById("gallery").style.display = "block";
+
+    // Smooth scroll to gallery
+    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+}
 </script>
 </body>
 
