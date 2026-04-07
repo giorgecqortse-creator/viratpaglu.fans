@@ -517,7 +517,15 @@ body {
         margin-bottom: 40px;
     }
 }
-/* Initially hide gallery and audio */
-#gallery, #music {
+/* Initially hide gallery, message, and music */
+#gallery, #message, #music {
     display: none;
-    }
+}
+#gallery, #message {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#gallery.show, #message.show {
+    opacity: 1;
+}
